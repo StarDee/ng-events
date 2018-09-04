@@ -1,17 +1,21 @@
 {
-  "name": "ng-events",
-  "version": "1.0.0",
-  "description": "Used to register to and trigger client side global events.",
-  "main": "ng-events.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "Angular",
-    "TypeScript",
-    "Events",
-    "JavaScript"
-  ],
-  "author": "starDee",
-  "license": "MIT"
+    "name": "ng-events",
+    "version": "1.0.0",
+    "description": "Used to register to and trigger client side global events.",
+    "main": "ng-events.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/StarDee/ng-events.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "Angular",
+        "TypeScript",
+        "Events",
+        "JavaScript"
+    ],
+    "author": "starDee",
+    "license": "MIT"
 }
