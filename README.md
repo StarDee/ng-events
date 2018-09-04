@@ -1,33 +1,51 @@
 # ng-events for Angular (v2+)
 
-## Introduction
-The Pub/sub event model is widely used on the client-side. ng-events is a simple global event bus to register to and trigger events.
+## 介绍
 
-## Quick Start
+ng-events 在 Angular 2 以上的版本中使用，类似于 ionic 中的 Events。可以 ng-events 注册一个全局事件，然后在需要的时候触发这个事件。
+
+ng-events is a simple global event bus to register to and trigger events.
+
+## 快速开始
 
 ```
 npm install ng-events --save
 ```
 
-## Registering To Events
-You can use ngEevents.on to register to a global event. An example registration:
+在 Angular 6 以上的版本中使用,修改 angular.json 文件, 在Angular 6以下版本中使用，修改.angular-cli.json文件
 
 ```
-ngEvents.on('itemAddedToBasket', function (item) {
-    console.log(item.name + ' was added to basket!');
+ "scripts": [
+              "node_modules/ng-events/dist/ng-events.js"
+              // ...
+            ]
+```
+当然也可以直接在index.html中引入，不过并不推荐这么做。
+
+## 注册事件
+
+- 你可以使用 ngEevents.on 注册一个全局事件:
+
+```
+ngEvents.on('eventName', function (item) {
+    console.log(item.name + ' was selected!');
 });
 ```
-The firt argument is the unique name of the event. The second one is a callback function that is called when the specified event is triggered.
 
-You can use the ngEvents.off method to unregister from an event. Note that the same function should be provided so it can be unregistered. So for the example above, you must set the callback function to a variable, then use both the on and off methods.
+第一个参数是事件的唯一名称。 第二个参数是在触发指定事件时调用的回调函数。
 
-## Trigger Events
-The ngEvents.trigger is used to trigger a global event. Example trigger code for the event registered above:
+- 您可以使用 ngEvents.off 方法取消注册的事件。
+
+## 触发事件
+
+使用 ngEvents.trigger 触发一个全局事件:
 
 ```
-ngEvents.trigger('itemAddedToBasket', {
+ngEvents.trigger('eventName', {
     id: 42,
-    name: 'Acme Light MousePad'
+    name: 'Pencil'
 });
 ```
-The first argument is the unique name of the event. The second one is the (optional) event argument. You can add any number of arguments and get them in the callback method.
+
+第一个参数是事件的唯一名称. 第二个是（可选）事件参数。
+你可以添加任意数量的参数并在回调方法中获取它们。
