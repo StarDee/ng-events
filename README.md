@@ -3,6 +3,7 @@
 ## 介绍
 
 ng-events is a simple global event bus to register to and trigger events.
+
 ng-events 在 Angular 2 以上的版本中使用，类似于 ionic 中的 Events。可以使用 ng-events 注册一个全局事件，然后在需要的时候触发这个事件。
 
 
