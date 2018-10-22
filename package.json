@@ -1,8 +1,9 @@
 {
     "name": "ng-events",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Used to register to and trigger client side global events.",
-    "main": "ng-events.js",
+    "main": "./ng-events.js",
+    "typings": "./ng-events.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/StarDee/ng-events.git"

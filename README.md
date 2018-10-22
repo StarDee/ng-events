@@ -13,15 +13,16 @@ ng-events 在 Angular 2 以上的版本中使用，类似于 ionic 中的 Events
 npm install ng-events --save
 ```
 
-在 Angular 6 以上的版本中使用,修改 angular.json 文件, 在Angular 6以下版本中使用，修改.angular-cli.json文件
+在 Angular 6 以上的版本中使用,修改 angular.json 文件, 在Angular 6以下版本中使用，修改.angular-cli.json文件。
 
 ```
  "scripts": [
-              "node_modules/ng-events/dist/ng-events.js"
+              "../node_modules/ng-events/ng-events.js"
               // ...
             ]
 ```
-当然也可以直接在index.html中引入，不过并不推荐这么做。
+
+当然也可以直接在index.html中引入，不过需要编译后仍在dist目录中，可以将ng-events文件放入assets目录中。
 
 ## 注册事件
 
@@ -36,6 +37,7 @@ ngEvents.on('eventName', function (item) {
 第一个参数是事件的唯一名称。 第二个参数是在触发指定事件时调用的回调函数。
 
 - 您可以使用 ngEvents.off 方法取消注册的事件。
+*1.0.3以前版本，off方法需要传入与on方法相同的第二个参数，建议写成同一个变量。*
 
 ## 触发事件
 
